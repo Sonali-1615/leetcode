@@ -2,15 +2,20 @@ class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
         List<Integer> l = new ArrayList<>();
-        HashSet<Integer> set = new HashSet<>();
-        for(int i : nums) {
-            set.add(i);
+
+        // Mark seen numbers
+        boolean[] seen = new boolean[n + 1];
+        for (int num : nums) {
+            seen[num] = true;
         }
-        for(int i = 1; i <= n; i++) {
-            if(!set.contains(i)) {
+
+        // Collect missing numbers
+        for (int i = 1; i <= n; i++) {
+            if (!seen[i]) {
                 l.add(i);
             }
         }
+
         return l;
     }
 }
