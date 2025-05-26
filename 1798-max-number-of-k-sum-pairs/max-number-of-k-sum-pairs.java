@@ -12,10 +12,10 @@ class Solution {
                     pref++;
                     suf--;
                 }
-                else if(sum > k) {
+                if(sum > k) {
                     suf--;
                 }
-                else {
+                if(sum < k) {
                     pref++;
                 }
             }
