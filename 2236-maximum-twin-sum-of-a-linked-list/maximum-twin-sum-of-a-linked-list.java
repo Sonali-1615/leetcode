@@ -11,19 +11,19 @@
 class Solution {
     public int pairSum(ListNode head) {
         Stack<Integer> s = new Stack<>();
-        ListNode cur = head;
-        while(cur != null) {
-            s.push(cur.val);
-            cur = cur.next;
+        ListNode c = head;
+        while(c != null) {
+            s.push(c.val);
+            c = c.next;
         }
-        cur = head;
-        int maxsum = 0;
+        c = head;
+        int m = 0;
         int n = s.size();
         for(int i = 0; i < n / 2; i++) {
-            int top = s.pop();
-            maxsum = Math.max(maxsum, cur.val + top);
-            cur = cur.next;
+            int t = s.pop();
+            m = Math.max(m, c.val + t);
+            c = c.next;
         }
-        return maxsum;
+        return m;
     }
 }
