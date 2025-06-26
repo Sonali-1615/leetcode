@@ -1,8 +1,8 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
         Set<Integer> s = new TreeSet<>();
-        for(int val : nums) {
-            s.add(val);
+        for(int i : nums) {
+            s.add(i);
         }
         int n = s.size();
         int j = 0;
